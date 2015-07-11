@@ -4,7 +4,7 @@
 package Config;
 
 public class Config {
-	public static final String[] tastes = {"All","西餐","中餐"};
+	public static final String[] tastes = {"所有口味","西餐","中餐"};
 	
 	
 }
