@@ -12,8 +12,10 @@ import javax.swing.*;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
+import Config.Config;
 import presentationHelper.*;
 
 public class PanelForInfo extends JPanel{
@@ -56,7 +58,7 @@ public class PanelForInfo extends JPanel{
 		remindLabel.setFont(new Font("宋体", Font.PLAIN, 20));
 		this.add(remindLabel);
 		
-		tastes = new JComboBox<String>(Config.Config.tastes);
+		tastes = new JComboBox<String>(Config.tastes);
 		tastes.setFont(new Font("宋体", Font.PLAIN, 15));
 		tastes.setLocation(350,34);
 		tastes.setSize(100,30);
@@ -72,6 +74,7 @@ public class PanelForInfo extends JPanel{
 		jsp.setSize(750,400);
 		jsp.setVisible(true);
 		jsp.setAutoscrolls(true);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		jsp.repaint();
 		this.add(jsp);
 		
@@ -95,9 +98,17 @@ public class PanelForInfo extends JPanel{
 		table.setDefaultRenderer(Object.class,r); //居中
 		
 		table.setFont(new Font("宋体", Font.PLAIN, 15));
-		table.setRowHeight(70);
 		
-		table.setSelectionBackground(new Color(255,245,240));  //选择行的颜色
+		table.setRowHeight(70);
+		for(int i=0;i<table.getColumnCount();i++){  //固定列宽
+			TableColumn firsetColumn = table.getColumnModel().getColumn(i); 
+			firsetColumn.setPreferredWidth(Config.colummWidth[i]); 
+			firsetColumn.setMaxWidth(Config.colummWidth[i]); 
+			firsetColumn.setMinWidth(Config.colummWidth[i]);
+		}
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);  //列宽不随容器改变
+		
+		table.setSelectionBackground(new Color(255,245,240));  //被选择行的颜色
 		
 		
 		
@@ -121,7 +132,7 @@ public class PanelForInfo extends JPanel{
 		@Override
 		public String getColumnName(int columnIndex) {
 			// TODO Auto-generated method stub
-			return "第"+columnIndex+"列";
+			return Config.columName[columnIndex];
 		}
 
 		@Override
@@ -148,7 +159,7 @@ public class PanelForInfo extends JPanel{
 				return img;
 			}
 			else 
-				return 1;
+				return 1+"*****************************";
 		}
 
 		@Override
