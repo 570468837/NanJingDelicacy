@@ -15,7 +15,7 @@ public class InfoTest {
 		p=new Panel(mf);
 		pft=new PanelForTitle(p);
 		pft.setVisible(true);
-		pfi = new PanelForInfo(p);
+		pfi = new PanelForInfo(p,"栖霞区");
 		pfi.setVisible(true);
 	}
 }

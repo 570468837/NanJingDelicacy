@@ -17,7 +17,7 @@ public class Panel extends JPanel{
 		mf.getContentPane().add(this);
 	}
 	public void paintComponent(Graphics g) {
-		Image icon = new ImageIcon("c.jpg").getImage();
+		Image icon = new ImageIcon("07.jpg").getImage();
 		g.drawImage(icon,0,0,this);
 	}
 }
