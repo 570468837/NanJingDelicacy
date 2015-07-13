@@ -75,10 +75,10 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		tastes.setVisible(true);
 		this.add(tastes);
 		
+		//下面两段是refreshTable的方法
 		table = new JTable(new MyTableModel(bl.getRestaurant(district, getTaste())));
 		beautifyTable(table);
 
-		
 		jsp = new JScrollPane(table);
 		jsp.setLocation(25,80);
 		jsp.setSize(750,400);
@@ -88,7 +88,6 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		jsp.repaint();
 		this.add(jsp);
 		
-		
 		this.repaint();
 		p.add(this);
 		p.repaint();
@@ -96,7 +95,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		backLabel.addMouseListener(new LMouseAdapter(p) {
 			public void mouseClicked(MouseEvent e) {
 				//跳转
-				refreshTable();
+				
 			}
 
 		});
