@@ -6,7 +6,10 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.event.TableModelListener;
@@ -17,19 +20,23 @@ import javax.swing.table.TableModel;
 
 import BLService.BLController;
 import BLService.BLService;
+import BLService.Restaurant;
 import Config.Config;
 import presentationHelper.*;
 
-public class PanelForInfo extends JPanel{
+public class PanelForInfo extends JPanel implements ItemListener{
 	JLabel backLabel;
 	JLabel tasteLabel;
 	JLabel remindLabel;
 	JComboBox tastes;
 	JScrollPane jsp;
 	JTable table;
+	String district;
 	BLService bl = new BLController();
 	
 	public PanelForInfo(Panel p, String district){
+		this.district = district;
+		
 		this.setSize(800,520);
 		this.setLocation(0,120);
 		this.setVisible(false);
@@ -68,7 +75,7 @@ public class PanelForInfo extends JPanel{
 		tastes.setVisible(true);
 		this.add(tastes);
 		
-		table = new JTable(new MyTableModel());
+		table = new JTable(new MyTableModel(bl.getRestaurant(district, getTaste())));
 		beautifyTable(table);
 
 		
@@ -102,11 +109,12 @@ public class PanelForInfo extends JPanel{
 		DefaultTableCellRenderer r = new DefaultTableCellRenderer();   
 		r.setHorizontalAlignment(JLabel.CENTER); 
 		
-		table.setDefaultRenderer(Object.class,r); //居中
+//		table.setDefaultRenderer(Object.class,r); //居中
+//		table.setDefaultRenderer(Object.class, new TableCellTextAreaRenderer());
 		
-		table.setFont(new Font("宋体", Font.PLAIN, 15));
+		table.setFont(new Font("宋体", Font.PLAIN, 12));
 		
-		table.setRowHeight(70);
+		table.setRowHeight(Config.colummWidth[0]);
 		for(int i=0;i<table.getColumnCount();i++){  //固定列宽
 			TableColumn firsetColumn = table.getColumnModel().getColumn(i); 
 			firsetColumn.setPreferredWidth(Config.colummWidth[i]); 
@@ -122,18 +130,46 @@ public class PanelForInfo extends JPanel{
 	 */
 	public void refreshTable(){
 		jsp.removeAll();
+		jsp.setVisible(false);
+		
+		table = new JTable(new MyTableModel(bl.getRestaurant(district, getTaste())));
+		beautifyTable(table);
+		
+		jsp = new JScrollPane(table);
+		jsp.setLocation(25,80);
+		jsp.setSize(750,400);
+		jsp.setVisible(true);
+		jsp.setAutoscrolls(true);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		jsp.repaint();
+		this.add(jsp);
 		
 	}
 	
+	public String getTaste(){
+		if(tastes.getSelectedItem().toString().equals("所有口味"))
+			return "All";
+		return tastes.getSelectedItem().toString();
+	}
+	
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getStateChange() == ItemEvent.SELECTED)
+			refreshTable();
+	}
+	
+	
+	
 	class MyTableModel implements TableModel{
-		
-		public MyTableModel(){
-			
+		ArrayList<Restaurant> restaurants ;
+		public MyTableModel(ArrayList<Restaurant> r){
+			restaurants = r;
 		}
 		@Override
 		public int getRowCount() {
 			// TODO Auto-generated method stub
-			return 10;
+			return restaurants.size();
 		}
 			
 		@Override
@@ -166,14 +202,24 @@ public class PanelForInfo extends JPanel{
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
 			// TODO Auto-generated method stub
-			if(columnIndex == 0){
-				ImageIcon img = new ImageIcon("07.jpg");
-				img.setImage(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+				Restaurant tmpR = restaurants.get(rowIndex);
+			switch(columnIndex){
+			case 0:
+				ImageIcon img = new ImageIcon(tmpR.getImgURL());
+				img.setImage(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
 				return img;
-			}
-			else 
-				return 1+"*****************************";
+			case 1:
+				return tmpR.getName();
+			case 2:
+				return tmpR.getAddress();
+			case 3:
+				return tmpR.getRate();
+			case 4:
+				return tmpR.getComment();
+				}
+			return null;
 		}
+			
 
 		@Override
 		public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
@@ -194,5 +240,6 @@ public class PanelForInfo extends JPanel{
 		}
 		
 	}
+
 	
 }
