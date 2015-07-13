@@ -15,6 +15,8 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
+import BLService.BLController;
+import BLService.BLService;
 import Config.Config;
 import presentationHelper.*;
 
@@ -25,6 +27,7 @@ public class PanelForInfo extends JPanel{
 	JComboBox tastes;
 	JScrollPane jsp;
 	JTable table;
+	BLService bl = new BLController();
 	
 	public PanelForInfo(Panel p, String district){
 		this.setSize(800,520);
@@ -86,11 +89,15 @@ public class PanelForInfo extends JPanel{
 		backLabel.addMouseListener(new LMouseAdapter(p) {
 			public void mouseClicked(MouseEvent e) {
 				//跳转
+				refreshTable();
 			}
 
 		});
 	}
-	
+	/**
+	 * 美化表格
+	 * @param 表格
+	 */
 	public void beautifyTable(JTable table){
 		DefaultTableCellRenderer r = new DefaultTableCellRenderer();   
 		r.setHorizontalAlignment(JLabel.CENTER); 
@@ -109,14 +116,20 @@ public class PanelForInfo extends JPanel{
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);  //列宽不随容器改变
 		
 		table.setSelectionBackground(new Color(255,245,240));  //被选择行的颜色
-		
-		
-		
+	}
+	/**
+	 * 刷新表格 
+	 */
+	public void refreshTable(){
+		jsp.removeAll();
 		
 	}
 	
 	class MyTableModel implements TableModel{
-
+		
+		public MyTableModel(){
+			
+		}
 		@Override
 		public int getRowCount() {
 			// TODO Auto-generated method stub
