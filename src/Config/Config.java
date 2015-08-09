@@ -1,14 +1,16 @@
 /**
- * è¿™ä¸ªç±»ç”¨æ¥å­˜æ”¾ä¸€ä¸‹å…¨å±€å˜é‡
+ * Õâ¸öÀàÓÃÀ´´æ·ÅÒ»Ğ©È«¾Ö±äÁ¿
  */
 package Config;
 
 public class Config {
-	public static final String[] tastes = {"æ‰€æœ‰å£å‘³","è¥¿é¤","ä¸­é¤"};
-	public static final String[] columName = {"å›¾ç‰‡","åº—å","åœ°å€","ç½‘å‹è¯„åˆ†","ç½‘å‹ç‚¹è¯„"};
+	public static final String[] tastes = {"ËùÓĞ¿ÚÎ¶","´¨²Ë¿ÚÎ¶","½­Õã¿ÚÎ¶","ÔÁ²Ë¿ÚÎ¶"};
+	public static final String[] columName = {"Í¼Æ¬","µêÃû","µØÖ·","ÍøÓÑÆÀ·Ö","ÍøÓÑµãÆÀ"};
+	public static final String[] districts = {"¹ÄÂ¥Çø","½¨ÚşÇø","½­ÄşÇø","ÁùºÏÇø","ÆÖ¿ÚÇø","ÆÜÏ¼Çø","ÇØ»´Çø","ÏÂ¹ØÇø","ĞşÎäÇø","Óê»¨Ì¨Çø",};
 	
-	public static final int restaurantPicture = 100;
-	public static final int[] colummWidth = {restaurantPicture,200,300,70,700};
+	public static final int restaurantPicture = 150;
+	public static final int[] colummWidth = {restaurantPicture,200,300,70,1600};
+	public static final int rowHeight = 120;
 	
 	
 }

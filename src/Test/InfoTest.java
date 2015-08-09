@@ -1,5 +1,6 @@
 package Test;
 
+import Config.Config;
 import presentation.MainFrame;
 import presentation.Panel;
 import presentation.PanelForInfo;
@@ -15,7 +16,7 @@ public class InfoTest {
 		p=new Panel(mf);
 		pft=new PanelForTitle(p);
 		pft.setVisible(true);
-		pfi = new PanelForInfo(p,"栖霞区");
+		pfi = new PanelForInfo(p,Config.districts[9]);
 		pfi.setVisible(true);
 	}
 }

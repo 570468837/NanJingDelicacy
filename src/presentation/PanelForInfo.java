@@ -44,38 +44,39 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		this.setLayout(null);
 		this.setBackground(Color.LIGHT_GRAY);
 		
-		backLabel = new JLabel("è¿”å›",JLabel.CENTER);
+		backLabel = new JLabel("·µ»Ø",JLabel.CENTER);
 		backLabel.setLocation(30,20);
 		backLabel.setSize(100,55);
 		backLabel.setVisible(true);
 		backLabel.setForeground(Color.WHITE);
-		backLabel.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+		backLabel.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
 		this.add(backLabel);
 		
-		tasteLabel = new JLabel("å£å‘³ï¼š ",JLabel.CENTER);
+		tasteLabel = new JLabel("¿ÚÎ¶£º",JLabel.CENTER);
 		tasteLabel.setLocation(270,18);
 		tasteLabel.setSize(100,61);
 		tasteLabel.setVisible(true);
 		tasteLabel.setForeground(Color.WHITE);
-		tasteLabel.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+		tasteLabel.setFont(new Font("ËÎÌå£º", Font.PLAIN, 20));
 		this.add(tasteLabel);
 		
-		remindLabel = new JLabel("æ‚¨å·²é€‰æ‹©ï¼š"+district,JLabel.CENTER);
+		remindLabel = new JLabel("ÄúÒÑÑ¡Ôñ£º"+district,JLabel.CENTER);
 		remindLabel.setLocation(550,20);
 		remindLabel.setSize(200,58);
 		remindLabel.setVisible(true);
 		remindLabel.setForeground(Color.WHITE);
-		remindLabel.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+		remindLabel.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
 		this.add(remindLabel);
 		
 		tastes = new JComboBox<String>(Config.tastes);
-		tastes.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
+		tastes.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
 		tastes.setLocation(350,34);
 		tastes.setSize(100,30);
 		tastes.setVisible(true);
+		tastes.addItemListener(this);
 		this.add(tastes);
 		
-		//ä¸‹é¢ä¸¤æ®µæ˜¯refreshTableçš„æ–¹æ³•
+		//ÏÂÃæÁ½¶ÎÊÇrefreshTableµÄ·½·¨
 		table = new JTable(new MyTableModel(bl.getRestaurant(district, getTaste())));
 		beautifyTable(table);
 
@@ -94,38 +95,37 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		
 		backLabel.addMouseListener(new LMouseAdapter(p) {
 			public void mouseClicked(MouseEvent e) {
-				//è·³è½¬
-				
+				//Ìø×ª
 			}
 
 		});
 	}
 	/**
-	 * ç¾åŒ–è¡¨æ ¼
-	 * @param è¡¨æ ¼
+	 * ÃÀ»¯±í¸ñ
+	 * @param ±í¸ñ
 	 */
 	public void beautifyTable(JTable table){
 		DefaultTableCellRenderer r = new DefaultTableCellRenderer();   
 		r.setHorizontalAlignment(JLabel.CENTER); 
 		
-//		table.setDefaultRenderer(Object.class,r); //å±…ä¸­
+//		table.setDefaultRenderer(Object.class,r); //¾ÓÖĞ
 //		table.setDefaultRenderer(Object.class, new TableCellTextAreaRenderer());
 		
-		table.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
+		table.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
 		
-		table.setRowHeight(Config.colummWidth[0]);
-		for(int i=0;i<table.getColumnCount();i++){  //å›ºå®šåˆ—å®½
+		table.setRowHeight(Config.rowHeight);
+		for(int i=0;i<table.getColumnCount();i++){  //¹Ì¶¨ÁĞ¿í
 			TableColumn firsetColumn = table.getColumnModel().getColumn(i); 
 			firsetColumn.setPreferredWidth(Config.colummWidth[i]); 
 			firsetColumn.setMaxWidth(Config.colummWidth[i]); 
 			firsetColumn.setMinWidth(Config.colummWidth[i]);
 		}
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);  //åˆ—å®½ä¸éšå®¹å™¨æ”¹å˜
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);  //ÁĞ¿í²»ËæÈİÆ÷±ä»¯
 		
-		table.setSelectionBackground(new Color(255,245,240));  //è¢«é€‰æ‹©è¡Œçš„é¢œè‰²
+		table.setSelectionBackground(new Color(255,245,240));  //±»Ñ¡ÔñĞĞµÄÑÕÉ«
 	}
 	/**
-	 * åˆ·æ–°è¡¨æ ¼ 
+	 * Ë¢ĞÂ±í¸ñ
 	 */
 	public void refreshTable(){
 		jsp.removeAll();
@@ -146,7 +146,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 	}
 	
 	public String getTaste(){
-		if(tastes.getSelectedItem().toString().equals("æ‰€æœ‰å£å‘³"))
+		if(tastes.getSelectedItem().toString().equals("ËùÓĞ¿ÚÎ¶"))
 			return "All";
 		return tastes.getSelectedItem().toString();
 	}
@@ -154,7 +154,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getStateChange() == ItemEvent.SELECTED)
+		if(e.getSource() == this.tastes && e.getStateChange() == ItemEvent.SELECTED)
 			refreshTable();
 	}
 	
@@ -204,8 +204,13 @@ public class PanelForInfo extends JPanel implements ItemListener{
 				Restaurant tmpR = restaurants.get(rowIndex);
 			switch(columnIndex){
 			case 0:
-				ImageIcon img = new ImageIcon(tmpR.getImgURL());
-				img.setImage(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+				String path = tmpR.getImgURL();
+				path=path.replace("(", "£¨");
+				path=path.replace(")", "£©");
+				ImageIcon img = new ImageIcon(path);
+//				System.out.println(tmpR.getImgURL());
+				img.setImage(img.getImage().getScaledInstance(Config.restaurantPicture, 
+						Config.restaurantPicture, Image.SCALE_DEFAULT));
 				return img;
 			case 1:
 				return tmpR.getName();
