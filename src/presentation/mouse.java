@@ -1,43 +1,48 @@
 package presentation;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class mouse implements MouseListener{
-	JLabel jj;
-	public mouse(JLabel jb){
-		this.jj=jb;
-	}
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+public class Mouse extends MouseAdapter{
+	JLabel j1,j2;
+	public Mouse(JLabel jb1,JLabel jb2){
+		this.j1=jb1;
+		this.j2=jb2;
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		jj.setIcon(new ImageIcon("Í¼Æ¬3.png"));
+		j1.setIcon(new ImageIcon("Í¼Æ¬3.png"));
+		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 22));
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		jj.setIcon(new ImageIcon("Í¼Æ¬1.png"));
+		j1.setIcon(new ImageIcon("Í¼Æ¬1.png"));
+		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 18));
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		jj.setIcon(new ImageIcon("Í¼Æ¬1.png"));
+		j1.setIcon(new ImageIcon("Í¼Æ¬1.png"));
+		j2.setForeground(Color.red);
+		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 20));
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		jj.setIcon(new ImageIcon("Í¼Æ¬4.png"));
+		j1.setIcon(new ImageIcon("Í¼Æ¬4.png"));
+		j2.setForeground(Color.blue);
+		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 18));
 	}
 
 	
