@@ -24,4 +24,9 @@ public class Main {
 		pfi=new PanelForInfo(p,s);
 		pfi.setVisible(true);
 	}
+	
+	public static void changeToMap(){
+		pfi.setVisible(false);
+		pfm.setVisible(true);
+	}
 }

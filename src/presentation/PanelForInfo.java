@@ -18,6 +18,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
+import main.Main;
 import BLService.BLController;
 import BLService.BLService;
 import BLService.Restaurant;
@@ -49,7 +50,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		backLabel.setSize(100,55);
 		backLabel.setVisible(true);
 		backLabel.setForeground(Color.WHITE);
-		backLabel.setFont(new Font("宋体", Font.PLAIN, 20));
+		backLabel.setFont(new Font("楷体", Font.PLAIN, 20));
 		this.add(backLabel);
 		
 		tasteLabel = new JLabel("口味：",JLabel.CENTER);
@@ -57,7 +58,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		tasteLabel.setSize(100,61);
 		tasteLabel.setVisible(true);
 		tasteLabel.setForeground(Color.WHITE);
-		tasteLabel.setFont(new Font("宋体：", Font.PLAIN, 20));
+		tasteLabel.setFont(new Font("楷体", Font.PLAIN, 20));
 		this.add(tasteLabel);
 		
 		remindLabel = new JLabel("您已选择："+district,JLabel.CENTER);
@@ -65,11 +66,11 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		remindLabel.setSize(200,58);
 		remindLabel.setVisible(true);
 		remindLabel.setForeground(Color.WHITE);
-		remindLabel.setFont(new Font("宋体", Font.PLAIN, 20));
+		remindLabel.setFont(new Font("楷体", Font.PLAIN, 20));
 		this.add(remindLabel);
 		
 		tastes = new JComboBox<String>(Config.tastes);
-		tastes.setFont(new Font("宋体", Font.PLAIN, 15));
+		tastes.setFont(new Font("楷体", Font.PLAIN, 15));
 		tastes.setLocation(350,34);
 		tastes.setSize(100,30);
 		tastes.setVisible(true);
@@ -96,6 +97,7 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		backLabel.addMouseListener(new LMouseAdapter(p) {
 			public void mouseClicked(MouseEvent e) {
 				//跳转
+				Main.changeToMap();
 			}
 
 		});
