@@ -52,7 +52,7 @@ public class PanelForMap extends JPanel{
 		buttonleft1=new JLabel();
 		buttonleft1.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonleft1.setOpaque(false);
-		buttonleft1.addMouseListener(new Mouse(buttonleft1,left1));
+		buttonleft1.addMouseListener(new mouse(buttonleft1,left1));
 		buttonleft1.setLocation(60,70);
 		buttonleft1.setSize(130,40);
 		this.add(buttonleft1);
@@ -69,7 +69,7 @@ public class PanelForMap extends JPanel{
 		buttonleft2=new JLabel();
 		buttonleft2.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonleft2.setOpaque(false);
-		buttonleft2.addMouseListener(new Mouse(buttonleft2,left2));
+		buttonleft2.addMouseListener(new mouse(buttonleft2,left2));
 		buttonleft2.setLocation(60,150);
 		buttonleft2.setSize(130,40);
 		this.add(buttonleft2);
@@ -86,7 +86,7 @@ public class PanelForMap extends JPanel{
 		buttonleft3=new JLabel();
 		buttonleft3.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonleft3.setOpaque(false);
-		buttonleft3.addMouseListener(new Mouse(buttonleft3,left3));
+		buttonleft3.addMouseListener(new mouse(buttonleft3,left3));
 		buttonleft3.setLocation(60,230);
 		buttonleft3.setSize(130,40);
 		this.add(buttonleft3);
@@ -103,7 +103,7 @@ public class PanelForMap extends JPanel{
 		buttonleft4=new JLabel();
 		buttonleft4.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonleft4.setOpaque(false);
-		buttonleft4.addMouseListener(new Mouse(buttonleft4,left4));
+		buttonleft4.addMouseListener(new mouse(buttonleft4,left4));
 		buttonleft4.setLocation(60,305);
 		buttonleft4.setSize(130,40);
 		this.add(buttonleft4);
@@ -120,7 +120,7 @@ public class PanelForMap extends JPanel{
 		buttonleft5=new JLabel();
 		buttonleft5.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonleft5.setOpaque(false);
-		buttonleft5.addMouseListener(new Mouse(buttonleft5,left5));
+		buttonleft5.addMouseListener(new mouse(buttonleft5,left5));
 		buttonleft5.setLocation(60,380);
 		buttonleft5.setSize(130,40);
 		this.add(buttonleft5);
@@ -137,7 +137,7 @@ public class PanelForMap extends JPanel{
 		buttonright1=new JLabel();
 		buttonright1.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonright1.setOpaque(false);
-		buttonright1.addMouseListener(new Mouse(buttonright1,right1));
+		buttonright1.addMouseListener(new mouse(buttonright1,right1));
 		buttonright1.setLocation(600, 70);
 		buttonright1.setSize(130,40);
 		this.add(buttonright1);
@@ -154,7 +154,7 @@ public class PanelForMap extends JPanel{
 		buttonright2=new JLabel();
 		buttonright2.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonright2.setOpaque(false);
-		buttonright2.addMouseListener(new Mouse(buttonright2,right2));
+		buttonright2.addMouseListener(new mouse(buttonright2,right2));
 		buttonright2.setLocation(600, 150);
 		buttonright2.setSize(130,40);
 		this.add(buttonright2);
@@ -171,7 +171,7 @@ public class PanelForMap extends JPanel{
 		buttonright3=new JLabel();
 		buttonright3.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonright3.setOpaque(false);
-		buttonright3.addMouseListener(new Mouse(buttonright3,right3));
+		buttonright3.addMouseListener(new mouse(buttonright3,right3));
 		buttonright3.setLocation(600, 230);
 		buttonright3.setSize(130,40);
 		this.add(buttonright3);
@@ -188,7 +188,7 @@ public class PanelForMap extends JPanel{
 		buttonright4=new JLabel();
 		buttonright4.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonright4.setOpaque(false);
-		buttonright4.addMouseListener(new Mouse(buttonright4,right4));
+		buttonright4.addMouseListener(new mouse(buttonright4,right4));
 		buttonright4.setLocation(600, 305);
 		buttonright4.setSize(130,40);
 		this.add(buttonright4);
@@ -205,7 +205,7 @@ public class PanelForMap extends JPanel{
 		buttonright5=new JLabel();
 		buttonright5.setIcon(new ImageIcon("ͼƬ4.png"));
 		buttonright5.setOpaque(false);
-		buttonright5.addMouseListener(new Mouse(buttonright5,right5));
+		buttonright5.addMouseListener(new mouse(buttonright5,right5));
 		buttonright5.setLocation(600, 380);
 		buttonright5.setSize(130,40);
 		this.add(buttonright5);

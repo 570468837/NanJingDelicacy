@@ -8,9 +8,9 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class Mouse extends MouseAdapter{
+public class mouse extends MouseAdapter{
 	JLabel j1,j2;
-	public Mouse(JLabel jb1,JLabel jb2){
+	public mouse(JLabel jb1,JLabel jb2){
 		this.j1=jb1;
 		this.j2=jb2;
 	}
