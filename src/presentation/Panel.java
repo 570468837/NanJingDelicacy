@@ -1,6 +1,5 @@
 package presentation;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -12,9 +11,12 @@ public class Panel extends JPanel{
 		this.setSize(800,640);
 		this.setLocation(0,0);
 		this.setVisible(true);
-		this.setOpaque(true);
+		this.setOpaque(false);
 		this.setLayout(null);
+		
+		this.repaint();
 		mf.getContentPane().add(this);
+		mf.repaint();
 	}
 	public void paintComponent(Graphics g) {
 		Image icon = new ImageIcon("07.jpg").getImage();

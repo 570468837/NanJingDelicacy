@@ -15,8 +15,8 @@ public class Main {
 	public static void main(String[] args){
 		mf=new MainFrame();
 		p=new Panel(mf);
-		pft=new PanelForTitle(p);
 		pfm=new PanelForMap(p);
+		pft=new PanelForTitle(p);
 	}
 	
 	public void change(){
