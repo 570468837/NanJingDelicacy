@@ -19,7 +19,9 @@ public class Main {
 		pft=new PanelForTitle(p);
 	}
 	
-	public void change(){
-		
+	public static void changeToInfo(String s){
+		pfm.setVisible(false);
+		pfi=new PanelForInfo(p,s);
+		pfi.setVisible(true);
 	}
 }
