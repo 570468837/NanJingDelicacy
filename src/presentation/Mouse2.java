@@ -1,7 +1,5 @@
 package presentation;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -22,7 +20,7 @@ public class Mouse2 extends MouseAdapter{
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Ðü¸¡2.png"));
+		j1.setIcon(new ImageIcon("image//Ðü¸¡2.png"));
 		j2.setVisible(true);
 		j3.setVisible(true);
 		j4.setVisible(true);
@@ -31,7 +29,7 @@ public class Mouse2 extends MouseAdapter{
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Ðü¸¡1.png"));
+		j1.setIcon(new ImageIcon("image//Ðü¸¡1.png"));
 		j2.setVisible(false);
 		j3.setVisible(false);
 		j4.setVisible(false);

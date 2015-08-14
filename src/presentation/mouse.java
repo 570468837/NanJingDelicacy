@@ -18,31 +18,31 @@ public class mouse extends MouseAdapter{
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Í¼Æ¬3.png"));
-		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 22));
+		j1.setIcon(new ImageIcon("image//Í¼Æ¬3.png"));
+		j2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 22));
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Í¼Æ¬1.png"));
-		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 18));
+		j1.setIcon(new ImageIcon("image//Í¼Æ¬1.png"));
+		j2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 18));
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Í¼Æ¬1.png"));
-		j2.setForeground(Color.red);
-		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 20));
+		j1.setIcon(new ImageIcon("image//Í¼Æ¬1.png"));
+		j2.setForeground(new Color(247,68,97));
+		j2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		j1.setIcon(new ImageIcon("Í¼Æ¬4.png"));
+		j1.setIcon(new ImageIcon("image//Í¼Æ¬4.png"));
 		j2.setForeground(Color.blue);
-		j2.setFont(new Font("¿¬Ìå", Font.BOLD, 18));
+		j2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 18));
 	}
 
 	

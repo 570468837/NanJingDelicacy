@@ -5,6 +5,7 @@ import presentation.Panel;
 import presentation.PanelForMap;
 import presentation.PanelForTitle;
 import presentation.PanelForInfo;
+import presentation.Audio;
 
 public class Main {
 	static MainFrame mf;
@@ -17,6 +18,8 @@ public class Main {
 		p=new Panel(mf);
 		pfm=new PanelForMap(p);
 		pft=new PanelForTitle(p);
+		Audio au=new Audio("sound//a.mp3");
+		au.start();
 	}
 	
 	public static void changeToInfo(String s){
