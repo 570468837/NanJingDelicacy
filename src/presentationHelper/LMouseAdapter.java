@@ -38,6 +38,6 @@ public class LMouseAdapter extends MouseAdapter {
 	}
 	
 	public static final Color 
-	    L = new Color(255, 255, 255, 100),
+	    L = new Color(196, 226, 216, 100),
 	    O = new Color(0, 0, 0, 0);
 }

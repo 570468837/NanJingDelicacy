@@ -49,28 +49,29 @@ public class PanelForInfo extends JPanel implements ItemListener{
 		backLabel.setLocation(30,20);
 		backLabel.setSize(100,55);
 		backLabel.setVisible(true);
-		backLabel.setForeground(Color.WHITE);
-		backLabel.setFont(new Font("¿¬Ìå", Font.PLAIN, 20));
+		backLabel.setForeground(new Color(113,175,164));
+		backLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
 		this.add(backLabel);
 		
 		tasteLabel = new JLabel("¿ÚÎ¶£º",JLabel.CENTER);
 		tasteLabel.setLocation(270,18);
 		tasteLabel.setSize(100,61);
 		tasteLabel.setVisible(true);
-		tasteLabel.setForeground(Color.WHITE);
-		tasteLabel.setFont(new Font("¿¬Ìå", Font.PLAIN, 20));
+		tasteLabel.setForeground(new Color(113,175,164));
+		tasteLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
 		this.add(tasteLabel);
 		
 		remindLabel = new JLabel("ÄúÒÑÑ¡Ôñ£º"+district,JLabel.CENTER);
 		remindLabel.setLocation(550,20);
 		remindLabel.setSize(200,58);
 		remindLabel.setVisible(true);
-		remindLabel.setForeground(Color.WHITE);
-		remindLabel.setFont(new Font("¿¬Ìå", Font.PLAIN, 20));
+		remindLabel.setForeground(new Color(113,175,164));
+		remindLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
 		this.add(remindLabel);
 		
 		tastes = new JComboBox<String>(Config.tastes);
-		tastes.setFont(new Font("¿¬Ìå", Font.PLAIN, 15));
+		tastes.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		tastes.setForeground(new Color(113,175,164));
 		tastes.setLocation(350,34);
 		tastes.setSize(100,30);
 		tastes.setVisible(true);
@@ -113,7 +114,8 @@ public class PanelForInfo extends JPanel implements ItemListener{
 //		table.setDefaultRenderer(Object.class,r); //¾ÓÖÐ
 //		table.setDefaultRenderer(Object.class, new TableCellTextAreaRenderer());
 		
-		table.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		table.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
+		table.setForeground(new Color(113,175,164));
 		
 		table.setRowHeight(Config.rowHeight);
 		for(int i=0;i<table.getColumnCount();i++){  //¹Ì¶¨ÁÐ¿í
